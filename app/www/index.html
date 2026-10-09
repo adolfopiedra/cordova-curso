@@ -1,0 +1,56 @@
+<!DOCTYPE HTML>
+
+<html>
+
+	<head>
+	
+		<title>E1</title>
+		<meta charset="UTF-8">
+		
+		
+		<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+		<link rel="stylesheet" type="text/css" href="css/leaflet.css">
+		<link rel="stylesheet" type="text/css" href="css/app.css">
+		
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+	
+	</head>
+	
+	<body onload="onDeviceReady()">
+
+	<div id="coordinates">
+		<p id="coordinates-text"></p>
+	</div>
+	
+	<div id="map">
+	</div>
+
+	<div id="menu">
+		<i class="fa-solid fa-location-dot"></i>
+		<i class="fa-solid fa-keyboard"></i>
+		<i class="fa-solid fa-square-plus"></i>
+		<i class="fa-solid fa-square-minus"></i>
+		<i class="fa-solid fa-layer-group"></i>
+		
+		<p id="separator" style="line-height: 50%;"> <br> </p>
+		
+		<i class="fa-solid fa-floppy-disk"></i>
+	</div>
+	
+	<div>
+		<p id="toast" style="display: none;"></p>
+	</div>
+
+	<div id="point-id" style="display: none;">
+		<input type="text" id="point-id-text">
+	</div>
+
+	<script language="javascript" type="text/javascript" src="js/leaflet.js"></script>
+	<script language="javascript" type="text/javascript" src="js/proj4.js"></script>
+    <script language="javascript" type="text/javascript" src="cordova.js"></script>
+	<script language="javascript" type="text/javascript" src="js/app.js"></script>
+
+	</body>
+
+</html>
+

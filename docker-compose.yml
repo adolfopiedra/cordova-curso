@@ -1,0 +1,16 @@
+name: cordova-curso
+services:
+  cordova:
+    build: .
+    platform: linux/amd64
+    init: true
+    working_dir: /workspace/app
+    volumes:
+      - ./app:/workspace/app
+      - npm-cache:/root/.npm
+      - gradle-cache:/root/.gradle
+      - android-state:/root/.android
+volumes:
+  npm-cache:
+  gradle-cache:
+  android-state:

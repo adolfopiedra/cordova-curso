@@ -1,0 +1,8 @@
+{
+  "name": "cordova-course-tooling",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "cordova": "12.0.0"
+  }
+}

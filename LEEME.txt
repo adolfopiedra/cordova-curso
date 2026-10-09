@@ -1,0 +1,19 @@
+1. Extrae todo el ZIP.
+2. Abre Docker Desktop (contenedores Linux).
+3. Abre una terminal en la carpeta que contiene docker-compose.yml.
+4. Ejecuta: docker compose up -d
+5. Consulta Guia_Cordova_Docker.pdf para instalar las dependencias del proyecto,
+   desarrollar, compilar y probar tu APK.
+
+Tambien puedes usar docker compose up sin -d: deja esa terminal abierta y usa
+una segunda terminal para los comandos. Al pulsar Ctrl+C paras el contenedor.
+
+El contenedor no crea apps, no ejecuta asistentes y no compila al arrancar.
+La primera vez Docker construye la imagen y descarga las herramientas.
+El proyecto base app/ esta vacio para que tu desarrolles la aplicacion.
+
+Licencias: la construccion acepta automaticamente las licencias del SDK Android
+mediante sdkmanager --licenses. Consulta https://developer.android.com/studio/terms
+antes de construir la imagen.
+
+No incluye instaladores, imagen Docker precargada ni APK compilado.
