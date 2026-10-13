@@ -1,6 +1,6 @@
 {
-  "name": "es.adolfo.miapp",
-  "displayName": "MiApp",
+  "name": "es.adolfo.app01",
+  "displayName": "App01",
   "version": "1.0.0",
   "private": true,
   "cordova": {
@@ -8,13 +8,11 @@
       "android"
     ],
     "plugins": {
-      "cordova-plugin-geolocation": {
-        "GPS_REQUIRED": "true"
-      }
+      "cordova-plugin-geolocation": {}
     }
   },
   "devDependencies": {
     "cordova-android": "13.0.0",
-    "cordova-plugin-geolocation": "^5.0.0"
+    "cordova-plugin-geolocation": "5.0.0"
   }
 }

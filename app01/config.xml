@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="es.adolfo.app01" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>App01</name>
+    <description>Proyecto del curso de aplicaciones en dispositivos moviles.</description>
+    <author>Adolfo Piedra Mora</author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="https://*/*" />
+    <preference name="scheme" value="https" />
+    <preference name="hostname" value="localhost" />
+    <preference name="android-minSdkVersion" value="24" />
+    <preference name="android-targetSdkVersion" value="34" />
+    <preference name="android-compileSdkVersion" value="34" />
+    <preference name="android-buildToolsVersion" value="34.0.0" />
+    <preference name="GradleVersion" value="8.7" />
+    <preference name="AndroidGradlePluginVersion" value="8.3.0" />
+</widget>

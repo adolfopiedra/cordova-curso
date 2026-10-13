@@ -4,9 +4,9 @@ services:
     build: .
     platform: linux/amd64
     init: true
-    working_dir: /workspace/app
+    working_dir: /workspace
     volumes:
-      - ./app:/workspace/app
+      - .:/workspace
       - npm-cache:/root/.npm
       - gradle-cache:/root/.gradle
       - android-state:/root/.android

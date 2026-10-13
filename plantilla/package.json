@@ -1,0 +1,9 @@
+{
+  "name": "cordova-curso-template",
+  "version": "1.0.0",
+  "private": true,
+  "main": "index.js",
+  "keywords": [
+    "cordova:template"
+  ]
+}

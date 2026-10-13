@@ -16,8 +16,8 @@ ENV PATH="${JAVA_HOME}/bin:${GRADLE_HOME}/bin:${ANDROID_HOME}/cmdline-tools/late
 RUN curl -fL --retry 3 https://services.gradle.org/distributions/gradle-8.7-bin.zip -o /tmp/gradle.zip \
     && echo '544c35d6bd849ae8a5ed0bcea39ba677dc40f49df7d1835561582da2009b961d  /tmp/gradle.zip' | sha256sum -c - \
     && unzip -q /tmp/gradle.zip -d /opt/gradle && rm /tmp/gradle.zip
-# Command-line tools revision 12: compatible with Java 17 and SDK 34.
-RUN curl -fL --retry 3 https://dl.google.com/android/repository/commandlinetools-linux-11076708_latest.zip -o /tmp/sdk.zip \
+# Pinned command-line tools, compatible with Java 17.
+RUN curl -fL --retry 3 https://dl.google.com/android/repository/commandlinetools-linux-13114758_latest.zip -o /tmp/sdk.zip \
     && mkdir -p "${ANDROID_HOME}/cmdline-tools" \
     && unzip -q /tmp/sdk.zip -d /tmp/android-tools \
     && mv /tmp/android-tools/cmdline-tools "${ANDROID_HOME}/cmdline-tools/latest" \
@@ -27,9 +27,13 @@ RUN curl -fL --retry 3 https://dl.google.com/android/repository/commandlinetools
 RUN set +o pipefail; yes | sdkmanager --licenses > /dev/null
 RUN sdkmanager "platform-tools" "platforms;android-34" "platforms;android-33" \
     "platforms;android-29" "sources;android-33" "sources;android-29" \
-    "build-tools;34.0.0" "build-tools;33.0.2" "build-tools;35.0.0"
+    "platforms;android-35" "platforms;android-36" \
+    "build-tools;34.0.0" "build-tools;33.0.2" "build-tools;35.0.0" "build-tools;36.0.0"
+# Fail during image construction if SDK 36 or its build tools are missing.
+RUN test -f "${ANDROID_HOME}/platforms/android-36/android.jar" \
+    && test -x "${ANDROID_HOME}/build-tools/36.0.0/aapt2"
 WORKDIR /opt/cordova-cli
 COPY tooling/package*.json ./
 RUN npm ci --omit=dev --no-audit --no-fund && cordova telemetry off
-WORKDIR /workspace/app
+WORKDIR /workspace
 CMD ["sleep", "infinity"]
